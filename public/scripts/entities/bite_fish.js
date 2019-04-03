@@ -28,7 +28,7 @@ class BiteFish extends Fish {
     let nearByFishes = window.fishtank.getProximateDenizens(biteFishPosition, 100);
     //console.log(nearByFishes)
     nearByFishes.forEach((fish) => {
-      if(fish.eatable){
+      if(fish.eatable || fish.eatableByBite){
         fish.kill()
       }
     })
