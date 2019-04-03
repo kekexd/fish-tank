@@ -3,11 +3,13 @@ class BiteFish extends Fish {
   constructor(options) {
     super(options);
     this.imageUri = '/images/biteFish.png';
-    this.height = options.height || 120;
-    this.width = options.width || 120;
+    this.height = options.height || 150;
+    this.width = options.width || 150;
     this.surgeSecondsLeft = 0;
     this.maxSurge = 1.0;
     this.surgMult = 3.0;
+    this.eatable = false;
+    this.fishesInside = 0;
   }
 
   updateOneTick() {
@@ -22,6 +24,13 @@ class BiteFish extends Fish {
 
 
   onClick(event) {
-    this.surgeSecondsLeft = this.maxSurge;
+    const biteFishPosition = this.position;
+    let nearByFishes = window.fishtank.getProximateDenizens(biteFishPosition, 100);
+    //console.log(nearByFishes)
+    nearByFishes.forEach((fish) => {
+      if(fish.eatable){
+        fish.kill()
+      }
+    })
   }
 }

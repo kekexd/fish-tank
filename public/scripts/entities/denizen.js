@@ -6,6 +6,8 @@ class Denizen {
     this.height = options.height || 60;
     this.width = options.width || 60;
     this.position = options.position.clone();
+    this.eatable = true;
+    //console.log('position', this.position)
     if (options.velocity) {
       this.velocity = options.velocity.clone();
     }

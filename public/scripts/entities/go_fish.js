@@ -23,3 +23,4 @@ class GoFish extends Fish {
     this.surgeSecondsLeft = this.maxSurge;
   }
 }
+
