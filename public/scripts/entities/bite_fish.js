@@ -2,7 +2,9 @@ class BiteFish extends Fish {
 
   constructor(options) {
     super(options);
-    this.imageUri = '/images/biteFish.gif';
+    this.imageUri = '/images/biteFish.png';
+    this.height = options.height || 120;
+    this.width = options.width || 120;
     this.surgeSecondsLeft = 0;
     this.maxSurge = 1.0;
     this.surgMult = 3.0;
