@@ -21,12 +21,9 @@ class GoFish extends Fish {
 
   onClick(event) {
     this.surgeSecondsLeft = this.maxSurge;
-    // const xVel = randRangeInt(-300, 300);
-    // const yVel = 400 - Math.abs(xVel);
     const bubbles = new Bubble({
       tank: this.tank,
       position: this.position,
-      //velocity: new Vector(xVel, yVel),
     });
   }
 }
